@@ -38,15 +38,3 @@ app.controller('ScoresCtrl', function() {
 	let scores = this;
 
 });
-
-// Contrôleur de la page des questions
-app.controller('QuestionsCtrl', function($http) {
-	let ask = this;
-	ask.questions = [];
-	// Récupération des questions et réponses
-	$http.get('/question.json').then(function(data) {
-		ask.questions = data.data;
-	});
-
-});
-
