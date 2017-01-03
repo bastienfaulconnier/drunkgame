@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.5.9",
-    "angular-route": "^1.6.1"
+    "angular": "1.5.9",
+    "angular-route": "1.5.9"
   },
   "devDependencies": {
     "live-server": "^1.0.0"
