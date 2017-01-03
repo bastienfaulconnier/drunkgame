@@ -1,1 +1,19 @@
-<h1>Scores</h1>
+<section>
+	<h1>Scores</h1>
+
+	<table>
+		<thead>
+			<th>Pseudo</th>
+			<th>Score</th>
+			<th>Date</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat='score in scores'>
+				<td>{{score.name}}</td>
+				<td>{{score.score}}</td>
+				<td>{{score.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
