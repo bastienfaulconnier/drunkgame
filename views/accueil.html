@@ -5,5 +5,7 @@
 	<p><b>Attention : cette application s'inscrit dans le cadre du pur divertissement et ne constitue en aucun cas une autorisation officielle de prendre la route, et ce quelque soit le résultat.<br>Le conducteur reste le seul responsable en cas d'accident lié à la consommation abusive d'alcool.</b></p>
 	<label>
 	<input type="checkbox" ng-model='confirm'> J'ai bien compris que ce test n'est pas officiel et que je suis le seul garant de ma sécurité.</label><br>
-	<a type='button' href='/#/questions' ng-show='confirm'>OK ! C'est parti !</a>
+	<a href='/#/questions'>
+		<input type='button' ng-disabled='!confirm' value="OK ! C'est parti !">
+	</a>
 </section>
