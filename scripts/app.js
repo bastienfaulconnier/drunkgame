@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
 		.when('/questions', {
 			templateUrl  : 'views/questions.html',
 			controller   : 'QuestionsCtrl',
-			controllerAs : 'questions'
+			controllerAs : 'ask'
 		})
 		.otherwise({
 			redirectTo	 : '/accueil'
@@ -40,7 +40,13 @@ app.controller('ScoresCtrl', function() {
 });
 
 // Contrôleur de la page des questions
-app.controller('QuestionsCtrl', function() {
-	let questions = this;
+app.controller('QuestionsCtrl', function($http) {
+	let ask = this;
+	ask.questions = [];
+	// Récupération des questions et réponses
+	$http.get('/question.json').then(function(data) {
+		ask.questions = data.data;
+	});
 
 });
+

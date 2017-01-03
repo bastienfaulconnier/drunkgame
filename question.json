@@ -56,7 +56,7 @@
     {
     "question" : "It's 12 am, so it's...",
     "reponses" : [{ "reponse" : "noon",
-                    "vrai" : true
+                    "vrai" : false
                     },
                     {
                     "reponse" : "midday",
@@ -64,7 +64,7 @@
                     },
                 	{
                     "reponse" : "midnight",
-                    "vrai" : false
+                    "vrai" : true
                     },
                 	{
                     "reponse" : "half night",
