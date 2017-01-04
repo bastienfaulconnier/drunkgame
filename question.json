@@ -88,5 +88,95 @@
                     "reponse" : "vendredi",
                     "vrai" : false
                     }]
-    }
+    },
+    {
+    "question" : "Quelle est la capitale de la Thaïlande ?",
+    "reponses" : [{ "reponse" : "Pyongyang",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "Bangkok",
+                    "vrai" : true
+                    },
+                    {
+                    "reponse" : "New Delhi",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "Singapour",
+                    "vrai" : false
+                    }]
+    },
+    {
+    "question" : "Citez un nombre premier :",
+    "reponses" : [{ "reponse" : "2017",
+                    "vrai" : true
+                    },
+                    {
+                    "reponse" : "27",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "20",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "201",
+                    "vrai" : false
+                    }]
+    },
+    {
+    "question" : "Un Franc équivaut à...",
+    "reponses" : [{ "reponse" : "0,15 €",
+                    "vrai" : true
+                    },
+                    {
+                    "reponse" : "6,56 €",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "1 €",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "0,37 €",
+                    "vrai" : false
+                    }]
+    },
+    {
+    "question" : "La quantité moyenne d'eau contenue dans un organisme adulte est de...",
+    "reponses" : [{ "reponse" : "90 %",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "4 %",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "65 %",
+                    "vrai" : true
+                    },
+                    {
+                    "reponse" : "15 %",
+                    "vrai" : false
+                    }]
+    },
+    {
+    "question" : "Quel roi s'est fait couper la tête ?",
+    "reponses" : [{ "reponse" : "Henry IV",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "Louis XIV",
+                    "vrai" : false
+                    },
+                    {
+                    "reponse" : "Louis XVI",
+                    "vrai" : true
+                    },
+                    {
+                    "reponse" : "Henry II",
+                    "vrai" : false
+                    }]
+    },
 ]
