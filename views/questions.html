@@ -23,4 +23,11 @@
 	<p ng-show="ask.resultID == 3" class="win">Vous semblez un peu stressé. Détendez-vous, tout va bien ! Vous pouvez y aller, et surtout roulez tranquillement !</p>
 	<p ng-show="ask.resultID == 1" class="lose">Avec des réponses pareilles, mieux vaut être prudent. Attendez un peu avant de prendre la route.</p>
 	<p ng-show="ask.resultID == 2" class="lose">Bon, il est définitivement temps d'aller cuver votre alcool ! Jetez immédiatement ces clefs de voiture.</p>
+
+	<label>
+		Votre pseudo :
+		<input type='text' ng-model='pseudo'>
+	</label>
+	<button ng-click='ask.write(pseudo, ask.score)' ng-disabled="pseudo.length < 3 || !pseudo">Valider</button>
+	
 </section>

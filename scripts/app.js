@@ -1,5 +1,5 @@
 // Création d'une application angular
-let app = angular.module('UndrunkApp', ['ngRoute']);
+let app = angular.module('UndrunkApp', ['ngRoute', 'ngStorage']);
 
 // Configuration de l'application angular
 app.config(function($routeProvider) {

@@ -1,5 +1,5 @@
 // Contrôleur de la page des questions
-app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope) {
+app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope, $localStorage) {
 	let ask = this;
 	let maxTime = 7000;
 	let maxQuestions = 5;
@@ -7,6 +7,9 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 	ask.score = 0;
 	ask.questions = [];
 	$rootScope.scoreIteration = 2;
+	$rootScope.storage = $localStorage.$default({
+		players : []
+	});
 	ask.view = false;
 
 	// Récupération des questions et réponses
@@ -74,6 +77,10 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 		$rootScope.scoreIteration = 1;
 		console.log('Iteration triggered');
 		return $rootScope.scoreIteration;
+	}
+
+	ask.write = function(pseudo, score) {
+		
 	}
 
 }); // Fin controlleur
