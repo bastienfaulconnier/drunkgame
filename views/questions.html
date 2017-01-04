@@ -1,7 +1,24 @@
-<h1>Questions</h1>
-<div class='score'>Score = {{ask.score}}</div>
-<span class='progressBar'></span>
-<h2>{{ask.demand}}</h2>
-<li class='reponses' ng-repeat='reponse in ask.answers'>
-	<a ng-click='ask.check(reponse.vrai)'>{{reponse.reponse}}</a>
-</li>
+<section id='questions'>
+	<h1>Questions</h1>
+	<div class='score'>Score = {{ask.score}}</div>
+	<span class='progressBar'></span>
+	<h2>{{ask.demand}}</h2>
+	<ul class='reponses'>
+		<span ng-repeat='reponse in ask.answers'>
+			<li ng-click='ask.check(reponse.vrai)'>
+				{{reponse.reponse}}
+			</li>
+		</span>
+	</ul>
+</section>
+
+<section id='results'>
+	<h1>Résultat</h1>
+	<!-- Inclure l'image correspondante au score -->
+	<div class='score'>Total = {{ask.score}}</div>
+	<!-- Messages selon le score -->
+	<p>Même Chuck Norris n'a jamais été aussi sobre que vous !</p>
+	<p>Vous semblez un peu stressé. Détendez-vous, tout va bien ! Vous pouvez y aller, et surtout roulez tranquillement !</p>
+	<p>Avec des réponses pareilles, mieux vaut être prudent. Attendez un peu avant de prendre la route.</p>
+	<p>Bon, il est définitivement temps d'aller cuver votre alcool ! Jetez immédiatement ces clefs de voiture.</p>
+</section>

@@ -9,3 +9,21 @@ html {
 	font-size: 16px;
 	color: #333;
 }
+
+ul.reponses {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.reponses li {
+	margin: 5px;
+	padding: 15px;
+	width: 50%;
+	border: 1px solid #555;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+ul.reponses li:hover {
+	background-color: #BFBFBF;
+}
