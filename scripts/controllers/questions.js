@@ -27,11 +27,9 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 		// Timer
 		let interval = $interval(function() {
 			ask.timer -= 100 / (maxTime / (1000/60));
-
 			if(ask.timer <= 0) {
 				ask.check('miss');
 			}
-
 		}, 1000/60);
 
 
@@ -48,7 +46,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 			} else if(bool) {
 				ask.score = ask.score + $rootScope.scoreIteration;
 			}
-
+			ask.resultID = resultID(ask.score);
 			// Vérification du nb de questions restantes
 			if(maxQuestions <= 0){
 				$interval.cancel(interval);
@@ -71,15 +69,13 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 
 	});
 
-
-	// Modifier le score à mi-chemin du chrono
+	// Modifie le score à mi-chemin du chrono
 	ask.scoreTime = function() {
 		$rootScope.scoreIteration = 1;
 		console.log('Iteration triggered');
 		return $rootScope.scoreIteration;
 	}
 
-	
 }); // Fin controlleur
 
 // Mélanger les éléments de réponse
@@ -93,5 +89,18 @@ function touillette(array){
     array[index] = temp;
    }
     return array;
+}
+
+// ID d'affichage des résultats
+function resultID(score) {
+	if(score > 4) {
+		return 4;
+	} else if(score >= 0) {
+		return 3;
+	} else if(score < -2) {
+		return 2;
+	} else if(score < 0) {
+		return 1;
+	}
 }
 
