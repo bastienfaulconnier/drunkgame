@@ -1,7 +1,9 @@
 <section id='questions' ng-hide='ask.view'>
 	<h1>Questions</h1>
 	<div class='score'>Score = {{ask.score}}</div>
-	<span class='progressBar'></span>
+	<div class='progressBar'>
+		<span style='width: {{ask.timer+"%"}}'></span>
+	</div>
 	<h2>{{ask.demand}}</h2>
 	<ul class='reponses'>
 		<span ng-repeat='reponse in ask.answers'>
