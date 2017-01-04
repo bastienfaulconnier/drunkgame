@@ -34,7 +34,7 @@ app.controller('AccueilCtrl', function() {
 });
 
 // Contrôleur de la page des scores
-app.controller('ScoresCtrl', function() {
+app.controller('ScoresCtrl', function($localStorage) {
 	let scores = this;
-
+	scores.players = $localStorage.players;
 });

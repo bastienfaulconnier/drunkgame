@@ -7,7 +7,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	ask.score = 0;
 	ask.questions = [];
 	$rootScope.scoreIteration = 2;
-	$rootScope.storage = $localStorage.$default({
+	$localStorage.$default({
 		players : []
 	});
 	ask.view = false;
@@ -80,7 +80,10 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	}
 
 	ask.write = function(pseudo, score) {
-		
+		let form = {
+			"name" : pseudo,
+			"rank" : score };
+		$localStorage.players.push(form);
 	}
 
 }); // Fin controlleur

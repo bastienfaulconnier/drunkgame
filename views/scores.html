@@ -8,11 +8,11 @@
 			<th>Date</th>
 		</thead>
 		<tbody>
-			<tr ng-repeat='score in scores'>
-				<td>{{score.name}}</td>
-				<td>{{score.score}}</td>
-				<td>{{score.date}}</td>
-			</tr>
+			<tr ng-repeat='player in scores.players'>
+				<td>{{player.name}}</td>
+				<td>{{player.rank}}</td>
+<!-- 				<td>{{player.date}}</td>
+ -->			</tr>
 		</tbody>
 	</table>
 
