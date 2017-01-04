@@ -1,4 +1,4 @@
-<section id='questions'>
+<section id='questions' ng-hide='ask.view'>
 	<h1>Questions</h1>
 	<div class='score'>Score = {{ask.score}}</div>
 	<span class='progressBar'></span>
@@ -12,7 +12,7 @@
 	</ul>
 </section>
 
-<section id='results'>
+<section id='results' ng-show='ask.view'>
 	<h1>Résultat</h1>
 	<!-- Inclure l'image correspondante au score -->
 	<div class='score'>Total = {{ask.score}}</div>
