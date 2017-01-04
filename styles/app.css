@@ -27,3 +27,25 @@ ul.reponses li {
 ul.reponses li:hover {
 	background-color: #BFBFBF;
 }
+
+.progressBar {
+	width: 33%;
+	height: 20px;
+	margin-bottom: 1.4rem;
+	outline: 1px solid cornflowerblue;
+
+}
+.progressBar span {
+	display: block;
+	width: 100%;
+	height: 20px;
+	background-color: cornflowerblue;
+}
+
+.win {
+	color:green;
+}
+
+.lose {
+	color:red;
+}
