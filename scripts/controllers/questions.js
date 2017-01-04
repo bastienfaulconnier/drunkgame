@@ -1,7 +1,8 @@
 // Contrôleur de la page des questions
 app.controller('QuestionsCtrl', function($http, $interval) {
 	let ask = this;
-	let score = 0;
+	let intervalCount = 5;
+	ask.score = 0;
 	ask.questions = [];
 
 	// Récupération des questions et réponses
@@ -11,17 +12,19 @@ app.controller('QuestionsCtrl', function($http, $interval) {
 		$interval(function() {
 			let rand = Math.ceil(Math.random()*4);
 			console.log('Interval triggered');
-			
+
 			ask.demand = ask.questions[rand].question;
 			touillette(ask.questions[rand].reponses);
 			ask.answers = ask.questions[rand].reponses;
-		}, 3000, 5);
+		}, 3000, intervalCount);
 		
 	});
 
-	// Filtre random pour ng-repeat
-	ask.random = function() {
-		return 0.5 - Math.random();
+	// Fonction de vérification
+	ask.check = function(bool) {
+		if(bool) ask.score++;
+		else ask.score--;
+		console.log(ask.score);
 	}
 	
 });
