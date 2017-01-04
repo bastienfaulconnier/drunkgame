@@ -13,6 +13,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 		
 		// Affichage de la première question
 		let rand = Math.ceil(Math.random()*4);
+
 		touillette(ask.questions[rand].reponses);
 		ask.demand = ask.questions[rand].question;
 		ask.answers = ask.questions[rand].reponses;
@@ -23,15 +24,21 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope)
 
 		// Affichage des questions suivantes au bout de 7s
 		let timer = $interval(function() {
+			console.log('Interval triggered');
 			// Reset de l'itération du score gagné
 			$rootScope.scoreIteration = 2;
 			
-			rand = Math.ceil(Math.random()*ask.questions.length);
+			if(ask.questions.length = 1) {
+				rand = 0;
+			} else {
+				rand = Math.ceil(Math.random()*ask.questions.length);
+			}
+
 			touillette(ask.questions[rand].reponses);
 			ask.demand = ask.questions[rand].question;
 			ask.answers = ask.questions[rand].reponses;
-			ask.questions.splice(rand, 1);
-			console.log("Interval triggered");
+			ask.questions.splice(rand, 1); // BUG ICI
+			
 
 			// Changement du score gagné à mi-temps
 			$timeout(ask.scoreTime, 3500);
