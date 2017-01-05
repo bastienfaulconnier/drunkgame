@@ -16,23 +16,65 @@ ul.reponses {
 }
 
 ul.reponses li {
-	margin: 5px;
+	margin: 5px 30%;
 	padding: 15px;
-	width: 50%;
+	/*width: 50%;*/
 	border: 1px solid #555;
 	border-radius: 5px;
 	cursor: pointer;
+	text-align: center;
 }
 
 ul.reponses li:hover {
-	background-color: #BFBFBF;
+	background-color: #7DACE4;
 }
 
+h1 {
+	text-align: center;
+}
+body {
+	background-color: #ADF7D1;
+}
+
+/*Menu*/
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #95E8D7;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: #264E86;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #7DACE4;
+}
+
+.okgo {
+    width: 150px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* Barre progression */
 .progressBar {
-	width: 33%;
+	width: 80%;
 	height: 20px;
 	margin-bottom: 1.4rem;
-	outline: 1px solid cornflowerblue;
+	margin: auto;
+	outline: 3px solid cornflowerblue;
 
 }
 .progressBar span {
@@ -44,8 +86,55 @@ ul.reponses li:hover {
 
 .win {
 	color:green;
+	text-align: center;
 }
 
 .lose {
 	color:red;
+	text-align: center;
+}
+
+/*Accueil*/
+
+.accueil {
+	text-align: center;
+}
+.warning {
+	color:red;
+}
+
+/*Questions*/
+.score, h2 {
+	text-align: center;
+}
+.score {
+	font-size: 35px;
+}
+.reponses {
+	display: block;
+
+}
+.pseudo {
+	width: 37%;
+	margin: auto;
+}
+
+/*Score*/
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+td, th {
+    border: 1px solid #264E86;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #264E86;
+    color:white;
 }
