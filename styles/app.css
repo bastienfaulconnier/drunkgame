@@ -62,10 +62,28 @@ body {
 }
 
 .okgo {
-    width: 150px;
-    height: 50px;
-    margin-top: 30px;
+	margin: 30px 40%;
     font-size: 18px;
+    background-color: #74DBEF;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    color:black;
+    border-radius: 10px;
+}
+
+.okgo:hover {
+	background-color: #5E88FC;
+	color: white;
+}
+
+.okgo:disabled {
+	background-color: grey;
+	color: #d3d3d3;
 }
 
 /* Barre progression */
@@ -74,14 +92,14 @@ body {
 	height: 20px;
 	margin-bottom: 1.4rem;
 	margin: auto;
-	outline: 3px solid cornflowerblue;
+	outline: 3px solid #264E86;
 
 }
 .progressBar span {
 	display: block;
 	width: 100%;
 	height: 20px;
-	background-color: cornflowerblue;
+	background-color: #264E86;
 }
 
 .win {
