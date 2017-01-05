@@ -7,9 +7,7 @@ app.config(function($routeProvider) {
 	// Configuration des routes
 	$routeProvider
 		.when('/accueil', {
-			templateUrl  : 'views/accueil.html',
-			controller   : 'AccueilCtrl',
-			controllerAs : 'accueil'
+			templateUrl  : 'views/accueil.html'
 		})
 		.when('/scores', {
 			templateUrl  : 'views/scores.html',

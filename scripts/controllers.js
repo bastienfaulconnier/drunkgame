@@ -1,3 +1,9 @@
+// Contrôleur de la page des scores
+app.controller('ScoresCtrl', function($localStorage) {
+	let scores = this;
+	scores.players = $localStorage.players;
+});
+
 // Contrôleur de la page des questions
 app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope, $localStorage) {
 	let ask = this;
@@ -115,4 +121,3 @@ function resultID(score) {
 		return 1;
 	}
 }
-
