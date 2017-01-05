@@ -11,8 +11,8 @@
 			<tr ng-repeat='player in scores.players'>
 				<td>{{player.name}}</td>
 				<td>{{player.rank}}</td>
-<!-- 				<td>{{player.date}}</td>
- -->			</tr>
+ 				<td>{{player.date | date:'dd/MM/yy'}}</td>
+			</tr>
 		</tbody>
 	</table>
 

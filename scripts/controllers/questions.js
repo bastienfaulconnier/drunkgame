@@ -75,15 +75,17 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	// Modifie le score à mi-chemin du chrono
 	ask.scoreTime = function() {
 		$rootScope.scoreIteration = 1;
-		console.log('Iteration triggered');
 		return $rootScope.scoreIteration;
 	}
 
+	
 	ask.write = function(pseudo, score) {
 		let form = {
 			"name" : pseudo,
-			"rank" : score };
+			"rank" : score,
+			"date" : Date.now() };
 		$localStorage.players.push(form);
+		window.location = '/#/scores';
 	}
 
 }); // Fin controlleur
