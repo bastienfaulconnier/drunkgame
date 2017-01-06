@@ -10,7 +10,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	let maxTime = 7000;
 	let maxQuestions = 5;
 	ask.timer = 100;
-	ask.score = 0;
+	ask.score = 1;
 	ask.questions = [];
 	$rootScope.scoreIteration = 2;
 	$localStorage.$default({
