@@ -6,6 +6,7 @@ app.controller('ScoresCtrl', function($http) {
 	});
 });
 
+
 // Contrôleur de la page des questions
 app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope, questions) {
 	let ask = this;
