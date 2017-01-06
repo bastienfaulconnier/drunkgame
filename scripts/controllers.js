@@ -31,12 +31,14 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 		ask.answers = ask.questions[rand].reponses;
 		ask.questions.splice(rand, 1);
 
-		// Changement du score gagné à mi-temps
-		var timeout = $timeout(ask.scoreTime, 3500);
 
 		// Timer
 		let interval = $interval(function() {
 			ask.timer -= 100 / (maxTime / (1000/60));
+			if(ask.timer <= 50) {
+				ask.changetimer = true;
+				$rootScope.scoreIteration = 1;
+			}
 			if(ask.timer <= 0) {
 				ask.changetimer = false;
 				ask.check('miss');
@@ -47,7 +49,6 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 		// Fonction submit
 		ask.check = function(bool) {
 			ask.timer = 100;
-			$timeout.cancel(timeout);
 
 			// Ajout du score
 			if(bool == 'miss') {
@@ -75,17 +76,9 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 			ask.answers = ask.questions[rand].reponses;
 			ask.questions.splice(rand, 1);
 
-			var timeout = $timeout(ask.scoreTime, 3500);
 		}
 
 	});
-
-	// Modifie le score à mi-chemin du chrono
-	ask.scoreTime = function() {
-		$rootScope.scoreIteration = 1;
-		ask.changetimer = true;
-		return $rootScope.scoreIteration;
-	}
 
 	
 	ask.write = function(pseudo, score) {
