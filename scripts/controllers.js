@@ -1,11 +1,13 @@
 // Contrôleur de la page des scores
-app.controller('ScoresCtrl', function($localStorage) {
+app.controller('ScoresCtrl', function($http) {
 	let scores = this;
-	scores.players = $localStorage.players;
+	$http.get('https://api.myjson.com/bins/8s2ej').then(function(data) {
+		scores.players = data.data;
+	});
 });
 
 // Contrôleur de la page des questions
-app.controller('QuestionsCtrl', function($interval, $timeout, $rootScope, $localStorage, questions) {
+app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope, questions) {
 	let ask = this;
 
 	let maxTime = 7000;
@@ -17,10 +19,6 @@ app.controller('QuestionsCtrl', function($interval, $timeout, $rootScope, $local
 	ask.questions = questions.data;
 
 	ask.view = false; // Définit la section affichée dans la view
-
-	$localStorage.$default({
-		players : []
-	});
 	
 		
 	// Affichage de la première question
@@ -87,8 +85,14 @@ app.controller('QuestionsCtrl', function($interval, $timeout, $rootScope, $local
 			"name" : pseudo,
 			"rank" : score,
 			"date" : Date.now() };
-		$localStorage.players.push(form);
-		window.location = '/#/scores';
+
+		$http.get('https://api.myjson.com/bins/8s2ej').then(function(data) {
+			let tableau = data.data;
+			tableau.push(form);
+			$http.put('https://api.myjson.com/bins/8s2ej', tableau).then(function(){
+				window.location = '/#/scores';
+			});
+		});
 	}
 
 }); // Fin controlleur
