@@ -10,6 +10,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	let maxTime = 7000;
 	let maxQuestions = 5;
 	ask.timer = 100;
+	ask.changetimer = false;
 	ask.score = 1;
 	ask.questions = [];
 	$rootScope.scoreIteration = 2;
@@ -37,6 +38,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 		let interval = $interval(function() {
 			ask.timer -= 100 / (maxTime / (1000/60));
 			if(ask.timer <= 0) {
+				ask.changetimer = false;
 				ask.check('miss');
 			}
 		}, 1000/60);
@@ -81,6 +83,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	// Modifie le score à mi-chemin du chrono
 	ask.scoreTime = function() {
 		$rootScope.scoreIteration = 1;
+		ask.changetimer = true;
 		return $rootScope.scoreIteration;
 	}
 

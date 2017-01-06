@@ -8,7 +8,7 @@
 			<th>Date</th>
 		</thead>
 		<tbody>
-			<tr ng-repeat='player in scores.players'>
+			<tr ng-repeat='player in scores.players | orderBy: "-date"'>
 				<td>{{player.name}}</td>
 				<td>{{player.rank}}</td>
  				<td>{{player.date | date:'dd/MM/yy'}}</td>

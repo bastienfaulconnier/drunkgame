@@ -1,7 +1,7 @@
 <section id='questions' ng-hide='ask.view'>
 	<h1>Questions</h1>
 	<div class='score'>Score = {{ask.score}}</div>
-	<div class='progressBar'>
+	<div class='progressBar' ng-class="{'danger' : ask.changetimer}">
 		<span style='width: {{ask.timer+"%"}}'></span>
 	</div>
 	<h2>{{ask.demand}}</h2>

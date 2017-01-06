@@ -102,6 +102,13 @@ body {
 	background-color: #264E86;
 }
 
+.progressBar.danger {
+	outline: 3px solid #BF3F3F;
+}
+.progressBar.danger span {
+	background-color: #BF3F3F;
+}
+
 .win {
 	color:green;
 	text-align: center;
