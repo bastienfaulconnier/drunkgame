@@ -29,10 +29,10 @@
 	<div class='score'>Total = {{ask.score}}</div>
 
 	<!-- Messages selon le score -->
-	<p ng-show="ask.resultID == 4" class="win">Même Chuck Norris n'a jamais été aussi sobre que vous !</p>
-	<p ng-show="ask.resultID == 3" class="win">Vous semblez un peu stressé. Détendez-vous, tout va bien ! Vous pouvez y aller, et surtout roulez tranquillement !</p>
-	<p ng-show="ask.resultID == 1" class="lose">Avec des réponses pareilles, mieux vaut être prudent. Attendez un peu avant de prendre la route.</p>
-	<p ng-show="ask.resultID == 2" class="lose">Bon, il est définitivement temps d'aller cuver votre alcool ! Jetez immédiatement ces clefs de voiture.</p>
+	<p ng-show="ask.score > 4" class="win">Même Chuck Norris n'a jamais été aussi sobre que vous !</p>
+	<p ng-show="ask.score >= 0 " class="win">Vous semblez un peu stressé. Détendez-vous, tout va bien ! Vous pouvez y aller, et surtout roulez tranquillement !</p>
+	<p ng-show="ask.score < 0 && ask.score > -2" class="lose">Avec des réponses pareilles, mieux vaut être prudent. Attendez un peu avant de prendre la route.</p>
+	<p ng-show="ask.score < -2" class="lose">Bon, il est définitivement temps d'aller cuver votre alcool ! Jetez immédiatement ces clefs de voiture.</p>
 
 	<!-- Demande du pseudonyme -->
 	<div class="pseudo">
