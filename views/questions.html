@@ -1,10 +1,17 @@
 <section id='questions' ng-hide='ask.view'>
 	<h1>Questions</h1>
+	<!-- Affichage du score -->
 	<div class='score'>Score = {{ask.score}}</div>
+
+	<!-- Affichage de la barre de progression -->
 	<div class='progressBar' ng-class="{'danger' : ask.changetimer}">
 		<span style='width: {{ask.timer+"%"}}'></span>
 	</div>
+
+	<!-- Affichage de la question -->
 	<h2>{{ask.demand}}</h2>
+
+	<!-- Affichage des réponses -->
 	<ul class='reponses'>
 		<span ng-repeat='reponse in ask.answers'>
 			<li ng-click='ask.check(reponse.vrai)'>
@@ -12,18 +19,22 @@
 			</li>
 		</span>
 	</ul>
+
 </section>
 
 <section id='results' ng-show='ask.view'>
 	<h1>Résultat</h1>
+
 	<!-- Inclure l'image correspondante au score -->
 	<div class='score'>Total = {{ask.score}}</div>
+
 	<!-- Messages selon le score -->
 	<p ng-show="ask.resultID == 4" class="win">Même Chuck Norris n'a jamais été aussi sobre que vous !</p>
 	<p ng-show="ask.resultID == 3" class="win">Vous semblez un peu stressé. Détendez-vous, tout va bien ! Vous pouvez y aller, et surtout roulez tranquillement !</p>
 	<p ng-show="ask.resultID == 1" class="lose">Avec des réponses pareilles, mieux vaut être prudent. Attendez un peu avant de prendre la route.</p>
 	<p ng-show="ask.resultID == 2" class="lose">Bon, il est définitivement temps d'aller cuver votre alcool ! Jetez immédiatement ces clefs de voiture.</p>
 
+	<!-- Demande du pseudonyme -->
 	<div class="pseudo">
 		<label>
 			Votre pseudo :

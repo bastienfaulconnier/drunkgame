@@ -1,3 +1,4 @@
+/*Base*/
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -8,25 +9,6 @@ html {
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-size: 16px;
 	color: #333;
-}
-
-ul.reponses {
-	list-style: none;
-	padding-left: 0;
-}
-
-ul.reponses li {
-	margin: 5px 30%;
-	padding: 15px;
-	/*width: 50%;*/
-	border: 1px solid #555;
-	border-radius: 5px;
-	cursor: pointer;
-	text-align: center;
-}
-
-ul.reponses li:hover {
-	background-color: #7DACE4;
 }
 
 h1 {
@@ -61,6 +43,7 @@ body {
     background-color: #7DACE4;
 }
 
+/*Bouton OK de l'accueil*/
 .okgo {
 	margin: 30px 40%;
     font-size: 18px;
@@ -109,18 +92,8 @@ body {
 	background-color: #BF3F3F;
 }
 
-.win {
-	color:green;
-	text-align: center;
-}
-
-.lose {
-	color:red;
-	text-align: center;
-}
 
 /*Accueil*/
-
 .accueil {
 	text-align: center;
 }
@@ -144,8 +117,36 @@ body {
 	margin: auto;
 }
 
-/*Score*/
+ul.reponses {
+	list-style: none;
+	padding-left: 0;
+}
 
+ul.reponses li {
+	margin: 5px 30%;
+	padding: 15px;
+	border: 1px solid #555;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+ul.reponses li:hover {
+	background-color: #7DACE4;
+}
+
+/*Résultats*/
+.win {
+	color:green;
+	text-align: center;
+}
+
+.lose {
+	color:red;
+	text-align: center;
+}
+
+/*Score*/
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
