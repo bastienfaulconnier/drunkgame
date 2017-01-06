@@ -5,14 +5,14 @@ app.controller('ScoresCtrl', function($localStorage) {
 });
 
 // Contrôleur de la page des questions
-app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope, $localStorage) {
+app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope, $localStorage, questions) {
 	let ask = this;
 	let maxTime = 7000;
 	let maxQuestions = 5;
 	ask.timer = 100;
 	ask.changetimer = false;
 	ask.score = 1;
-	ask.questions = [];
+	ask.questions = questions.data;
 	$rootScope.scoreIteration = 2;
 	$localStorage.$default({
 		players : []
@@ -20,8 +20,8 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 	ask.view = false;
 
 	// Récupération des questions et réponses
-	$http.get('/question.json').then(function(data) {
-		ask.questions = data.data;
+	// $http.get('/question.json').then(function(data) {
+	// 	ask.questions = data.data;
 		
 		// Affichage de la première question
 		let rand = Math.ceil(Math.random()*9);
@@ -78,7 +78,7 @@ app.controller('QuestionsCtrl', function($http, $interval, $timeout, $rootScope,
 
 		}
 
-	});
+	// });
 
 	
 	ask.write = function(pseudo, score) {
@@ -103,17 +103,4 @@ function touillette(array){
     array[index] = temp;
    }
     return array;
-}
-
-// ID d'affichage des résultats
-function resultID(score) {
-	if(score > 4) {
-		return 4;
-	} else if(score >= 0) {
-		return 3;
-	} else if(score < -2) {
-		return 2;
-	} else if(score < 0) {
-		return 1;
-	}
 }

@@ -17,22 +17,15 @@ app.config(function($routeProvider) {
 		.when('/questions', {
 			templateUrl  : 'views/questions.html',
 			controller   : 'QuestionsCtrl',
-			controllerAs : 'ask'
+			controllerAs : 'ask',
+			resolve : {
+				questions : function($http) {
+					return $http.get('/question.json');
+				}
+			}
 		})
 		.otherwise({
 			redirectTo	 : '/accueil'
 		});
 
-});
-
-// Contrôleur de la page d'accueil
-app.controller('AccueilCtrl', function() {
-	let accueil = this;
-
-});
-
-// Contrôleur de la page des scores
-app.controller('ScoresCtrl', function($localStorage) {
-	let scores = this;
-	scores.players = $localStorage.players;
 });
